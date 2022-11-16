@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sword_Attack",
+                    "name": "Melee_Attack",
                     "type": "Button",
                     "id": "cf13720c-8570-4e56-9106-9833e33ec042",
                     "expectedControlType": "Button",
@@ -270,7 +270,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Sword_Attack",
+                    "action": "Melee_Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -281,7 +281,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Sword_Attack",
+                    "action": "Melee_Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

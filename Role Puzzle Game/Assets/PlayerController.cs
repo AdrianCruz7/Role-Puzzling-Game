@@ -51,10 +51,8 @@ public class PlayerController : MonoBehaviour
         //Flip sprite based on direction
         if (movementInput.x < 0){
             spriteRenderer.flipX = true;
-            swordAttack.attackDirection = SwordAttack.AttackDirection.LEFT;
         } else if (movementInput.x > 0){
             spriteRenderer.flipX = false;
-            swordAttack.attackDirection = SwordAttack.AttackDirection.RIGHT;
         }
     }
 
@@ -84,18 +82,22 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnSword_Attack()
+    void OnMelee_Attack()
     {
         animator.SetTrigger("Sword_Attack");
     }
 
-    // public void SwordAttack(){
-    //     LockMovement();
-    //     //swordAttack.AttackLeft();
+    public void SwordAttack(){
+        LockMovement();
+        if (spriteRenderer.flipX == true)
+        {
+            swordAttack.AttackLeft();
+        } else {
+            swordAttack.AttackRight();
+        }
 
-    //     //swordAttack.AttackRight();
 
-    // }
+    }
 
     public void LockMovement(){
         canMove = false;

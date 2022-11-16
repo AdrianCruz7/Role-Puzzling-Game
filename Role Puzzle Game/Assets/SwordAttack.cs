@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    public enum AttackDirection{
-        LEFT,
-        RIGHT
-    }
-
-    public AttackDirection attackDirection;
-
     Vector2 rightAttackOffset;
+
+    Collider2D swordCollider;
 
    // Start is called before the first frame update
     private void Start()
@@ -21,36 +16,26 @@ public class SwordAttack : MonoBehaviour
         rightAttackOffset = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Attack(){
-        switch(attackDirection)
-        {
-            case AttackDirection.LEFT:
-            AttackLeft();
-            break;
-            case AttackDirection.RIGHT:
-            AttackRight();
-            break;
-        }
-    }
-
-    Collider2D swordCollider;
-    private void AttackRight(){
+    public void AttackRight(){
+        print("Right");
         swordCollider.enabled = true;
         transform.position = rightAttackOffset;
     }
 
-    private void AttackLeft(){
+    public void AttackLeft(){
+        print("Left");
         swordCollider.enabled = true;
         transform.position = new Vector2(rightAttackOffset.x * -1, rightAttackOffset.y);
     }
     
     public void StopAttack(){
         swordCollider.enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Enemy")
+        {
+            
+        }
     }
 }
