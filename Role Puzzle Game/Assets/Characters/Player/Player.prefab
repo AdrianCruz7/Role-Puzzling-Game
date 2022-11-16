@@ -40,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3662029574826088992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -71,7 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883b0612970aab9408bd8e3b1d146844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDirection: 0
+  damage: 2
+  swordCollider: {fileID: 8237155449730147750}
 --- !u!1 &6015385645233705917
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +87,7 @@ GameObject:
   - component: {fileID: 3372623181515916912}
   - component: {fileID: 8907958627848640364}
   - component: {fileID: 5682046129360731297}
+  - component: {fileID: 631461468014429055}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -267,3 +269,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08043131, y: 0.030936196}
   m_EdgeRadius: 0
+--- !u!95 &631461468014429055
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015385645233705917}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 759694eb37bb2aa469e636fc71d87343, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
