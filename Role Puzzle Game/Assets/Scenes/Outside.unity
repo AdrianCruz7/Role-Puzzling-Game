@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 95919934}
   - component: {fileID: 95919933}
   m_Layer: 0
-  m_Name: Ground Top
+  m_Name: GroundTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -962,7 +962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574138060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.83, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4055,26 +4055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8428329050368975753, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
-      propertyPath: m_Size.x
-      value: 0.30775398
-      objectReference: {fileID: 0}
-    - target: {fileID: -8428329050368975753, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
-      propertyPath: m_Size.y
-      value: 0.45017064
-      objectReference: {fileID: 0}
-    - target: {fileID: -8428329050368975753, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.011366248
-      objectReference: {fileID: 0}
-    - target: {fileID: -8428329050368975753, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.08223772
-      objectReference: {fileID: 0}
-    - target: {fileID: -8428329050368975753, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5335631651627874369, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
       propertyPath: m_Name
       value: Monster
@@ -4130,19 +4110,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5335631651627874369, guid: 61fb78b62ee188b459e6ca520c186582, type: 3}
   m_PrefabInstance: {fileID: 5335631651351350847}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5335631651351350849
-MonoBehaviour:
+--- !u!95 &5335631651351350850
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5335631651351350848}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8cb6f2654b2eb04ca3fee568b3f30f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 257d4ed3829eed44c9e0dcc6ef269c82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6015385645083864386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4151,12 +4138,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3372623181515916912, guid: 27523666f772d784790d1036057ca372, type: 3}
-      propertyPath: collisionOffset
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3372623181515916912, guid: 27523666f772d784790d1036057ca372, type: 3}
-      propertyPath: movementFilter.layerMask.m_Bits
-      value: 1
+      propertyPath: maxSpeed
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 6015385645233705538, guid: 27523666f772d784790d1036057ca372, type: 3}
       propertyPath: m_RootOrder

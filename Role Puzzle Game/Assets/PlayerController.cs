@@ -6,18 +6,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1.0f;
+    bool IsMoving{
+        set{
+            isMoving = value;
+            animator.SetBool("isMoving", isMoving);
+        }
+    }
+
+    public float moveSpeed = 150f;
+    public float maxSpeed = 8f;
+    public float idleFriction = 0.9f;
+
+    Rigidbody2D rb;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+    Vector2 moveInput = Vector2.zero;
+
+    bool isMoving = false;
+    bool canMove = true;
+
+
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public SwordAttack swordAttack;
-    
-    Vector2 movementInput;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
-    Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,31 +43,25 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //If movement input is > 0
-        if (movementInput != Vector2.zero && canMove)
+        if (moveInput != Vector2.zero && canMove)
         {
-            bool success = tryMove(movementInput);
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
 
-            if(!success)
+            if(moveInput.x > 0)
             {
-                success = tryMove(new Vector2(movementInput.x, 0)); 
-            }
-            
-            if(!success)
-            {
-                success = tryMove(new Vector2(movementInput.y, 0));
+                spriteRenderer.flipX = false;
+            } else if (moveInput.x < 0) {
+                spriteRenderer.flipX = true;
             }
 
-            animator.SetBool("isMoving", success);
+            IsMoving = true;
+
         } else {
-            animator.SetBool("isMoving", false);
+            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+
+            IsMoving = false;
         }
-        //Flip sprite based on direction
-        if (movementInput.x < 0){
-            spriteRenderer.flipX = true;
-        } else if (movementInput.x > 0){
-            spriteRenderer.flipX = false;
         }
-    }
 
     private bool tryMove(Vector2 direction)
     {
@@ -77,16 +84,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnMove(InputValue movementValue)
+    void OnMove(InputValue value)
     {
-        movementInput = movementValue.Get<Vector2>();
+        moveInput = value.Get<Vector2>();
     }
 
+    //Inputsystem Function
     void OnMelee_Attack()
     {
         animator.SetTrigger("Sword_Attack");
     }
 
+    //Sword attack movement locks
     public void SwordAttack(){
         LockMovement();
         if (spriteRenderer.flipX == true)

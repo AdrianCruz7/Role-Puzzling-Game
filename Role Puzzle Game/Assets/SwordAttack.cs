@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    public float damage = 2;
     Vector2 rightAttackOffset;
 
     public Collider2D swordCollider;
+    public float damage = 2;
 
    // Start is called before the first frame update
     private void Start()
