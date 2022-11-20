@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class DamagableCharacter : MonoBehaviour, IDamagable
 {
+    public GameObject healthText;
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
     bool IsAlive = true;
-    public float health = 1;
-    public bool targetable = true;
+    float health = 1;
+    bool targetable = true;
     public float Health {
         set {
             
             if (value < health)
             {
                 animator.SetTrigger("Hit");
+
+                RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+                textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+
+                Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+                textTransform.SetParent(canvas.transform);
             }
             health = value;
             

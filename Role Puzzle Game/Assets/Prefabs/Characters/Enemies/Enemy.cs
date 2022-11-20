@@ -11,20 +11,31 @@ public class Enemy : MonoBehaviour
 
     public EnemyRange enemyRange;
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
     Animator animator;
+
+    DamagableCharacter damagableCharacter;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        damagableCharacter = GetComponent<DamagableCharacter>();
     }
 
     void FixedUpdate(){
-        if(enemyRange.detectedObjects.Count > 0 && canMove)
+        if(damagableCharacter.Targetable && enemyRange.detectedObjects.Count > 0 && canMove)
         {
             //Calculate direction
             Vector2 direction = (enemyRange.detectedObjects[0].transform.position - transform.position).normalized;
 
+            //Need to flip sprites
+            // if(direction.x > 0)
+            // {
+            //     spriteRenderer.flipX = false;
+            // } else if (direction.x < 0) {
+            //     spriteRenderer.flipX = true;
+            // }
 
             rb.AddForce(direction * moveSpeed * Time.deltaTime); 
             animator.SetBool("IsMoving", true);

@@ -305,5 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10aed00bf9b50a41969731bbd2da7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 94451364249099540, guid: b2425f7cd1e213b4f9668d6aa1353725, type: 3}
   health: 5
   targetable: 1
