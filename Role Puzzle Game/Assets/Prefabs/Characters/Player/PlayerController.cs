@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public float moveSpeed = 150f;
-    public float maxSpeed = 8f;
+    public float maxSpeed = 3f;
     public float idleFriction = 0.9f;
 
     Rigidbody2D rb;
@@ -45,7 +45,14 @@ public class PlayerController : MonoBehaviour
         //If movement input is > 0
         if (moveInput != Vector2.zero && canMove)
         {
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
+
+            rb.AddForce(moveInput * moveSpeed * Time.deltaTime);
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity =  rb.velocity.normalized * limitedSpeed;
+            }
 
             if(moveInput.x > 0)
             {
@@ -57,7 +64,7 @@ public class PlayerController : MonoBehaviour
             IsMoving = true;
 
         } else {
-            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
 
             IsMoving = false;
         }

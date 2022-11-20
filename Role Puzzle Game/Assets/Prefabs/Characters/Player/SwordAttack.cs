@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
+    public float damage = 1f;
+    public float knockbackForce = 500f;
+    public Collider2D swordCollider;
+
     Vector2 rightAttackOffset;
 
-    public Collider2D swordCollider;
-    public float damage = 2;
 
    // Start is called before the first frame update
     private void Start()
@@ -18,13 +20,11 @@ public class SwordAttack : MonoBehaviour
     }
 
     public void AttackRight(){
-        print("Right");
         swordCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
     }
 
     public void AttackLeft(){
-        print("Left");
         swordCollider.enabled = true;
         transform.localPosition = new Vector2(rightAttackOffset.x * -1, rightAttackOffset.y);
     }
@@ -34,14 +34,22 @@ public class SwordAttack : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Enemy")
+        IDamagable damagableObject = other.GetComponent<IDamagable>();
+        if (damagableObject != null)
         {
-            //Deals damage to enemy
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.Health -= damage;
-            }
+            //calculates direction between player and damagable
+            Vector3 parentPosition = transform.parent.position;
+        
+            Vector2 direction = (other.gameObject.transform.position - parentPosition).normalized;
+            Vector2 knockback = direction * knockbackForce;
+
+            //damage enemy with knockback force applied
+            damagableObject.OnHit(damage, knockback);
         }
+    }
+
+//Collision Enemies that can move the player
+    void OnCollisionEnter2D(Collision2D other) {
+        
     }
 }
