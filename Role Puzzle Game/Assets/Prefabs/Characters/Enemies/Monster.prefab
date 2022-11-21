@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  knockbackForce: 200
+  knockbackForce: 50
   moveSpeed: 250
   canMove: 1
   enemyRange: {fileID: 2197127785350392388}
@@ -187,8 +187,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 94451364249099540, guid: b2425f7cd1e213b4f9668d6aa1353725, type: 3}
-  health: 5
-  targetable: 1
+  canTurnInvincible: 0
+  _targetable: 1
+  _invincible: 0
+  invinciblityTime: 0.5
+  _health: 5
 --- !u!1 &8143480432628973703
 GameObject:
   m_ObjectHideFlags: 0

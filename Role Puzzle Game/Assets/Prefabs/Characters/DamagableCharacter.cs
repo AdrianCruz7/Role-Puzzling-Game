@@ -8,13 +8,20 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
+
+    public bool canTurnInvincible = false;
+    public bool _targetable = true;
+    public bool _invincible = false;
     bool IsAlive = true;
-    float health = 1;
-    bool targetable = true;
+
+    public float invinciblityTime = 0.5f;
+    private float invincibleTimeElapsed = 0f;
+    public float _health = 5;
+
     public float Health {
         set {
             
-            if (value < health)
+            if (value < _health)
             {
                 animator.SetTrigger("Hit");
 
@@ -24,28 +31,42 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
                 Canvas canvas = GameObject.FindObjectOfType<Canvas>();
                 textTransform.SetParent(canvas.transform);
             }
-            health = value;
+            _health = value;
             
-            if (health <= 0)
+            if (_health <= 0)
             {
                 Defeated();
                 Targetable = false;
             }
         }
         get {
-            return health;
+            return _health;
         }
     }
 
     public bool Targetable 
     {
         set {
-                targetable = value;
+                _targetable = value;
 
                 physicsCollider.enabled = value;
             } 
         get {
-                return targetable;
+                return _targetable;
+            }
+    }
+
+    public bool Invincible {
+        set {
+                _invincible = value;
+
+                if (_invincible)
+                {
+                    invincibleTimeElapsed = 0f;
+                }
+            } 
+        get {
+                return _invincible;
             }
     }
 
@@ -63,15 +84,27 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        Health -= damage;
+        if (!Invincible){
+            Health -= damage;
 
-        //apply force to enemy
-        rb.AddForce(knockback, ForceMode2D.Impulse);
+            //apply force to enemy
+            rb.AddForce(knockback, ForceMode2D.Impulse);
+            if (canTurnInvincible){
+                //Active invinicibility
+                Invincible = true;
+            }
+        }
 
     }
     public void OnHit(float damage)
     {
-        Health -= damage;
+        if (!Invincible){
+            Health -= damage;
+            if (canTurnInvincible){
+                //Active invinicibility
+                Invincible = true;
+            }
+        }
     }
 
     public void onObjectDestoyed()
@@ -79,4 +112,13 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
         Destroy(gameObject);
     }
 
+    public void FixedUpdate() {
+        if (Invincible){
+            invincibleTimeElapsed += Time.deltaTime;
+
+            if (invincibleTimeElapsed > invinciblityTime){
+                Invincible = false;
+            }
+        }
+    }
 }
