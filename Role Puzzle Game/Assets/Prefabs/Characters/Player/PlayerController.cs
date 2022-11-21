@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
             IsMoving = false;
         }
-        }
+    }
 
     private bool tryMove(Vector2 direction)
     {
