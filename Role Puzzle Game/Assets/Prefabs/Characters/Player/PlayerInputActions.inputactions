@@ -49,15 +49,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "ContinueDialogue",
-                    "type": "Button",
-                    "id": "928e18ab-8261-4091-a956-ddae2c7b4324",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -311,17 +302,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bbb17555-08ea-4848-b175-869f416f7749",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ContinueDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

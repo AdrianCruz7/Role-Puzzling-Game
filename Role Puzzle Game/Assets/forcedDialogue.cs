@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class npc : MonoBehaviour
+public class forcedDialogue : MonoBehaviour
 {
     public DialogueTrigger dialogue;
     Rigidbody2D rb;
@@ -16,11 +16,8 @@ public class npc : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            dialogue.TriggerDialogue();
-            //rb.simulated = false;
-            //bx.isTrigger = true;
-        }
+        dialogue.TriggerDialogue();
+        //rb.simulated = false;
+        bx.isTrigger = true;
     }
 }
