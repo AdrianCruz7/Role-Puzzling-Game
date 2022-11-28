@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
     Vector2 moveInput = Vector2.zero;
-
+    //here
     bool isMoving = false;
     bool canMove = true;
 
@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public SwordAttack swordAttack;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -90,16 +93,20 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
+    
+    
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+
     }
 
     //Inputsystem Function
     void OnMelee_Attack()
     {
         animator.SetTrigger("Sword_Attack");
+
     }
 
     //Sword attack movement locks
@@ -112,7 +119,7 @@ public class PlayerController : MonoBehaviour
             swordAttack.AttackRight();
         }
     }
-
+    
     public void EndSwordAttack(){
         UnlockMovement();
         swordAttack.StopAttack();
