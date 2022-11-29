@@ -31,10 +31,6 @@ public class PlayerController : MonoBehaviour
     public SwordAttack swordAttack;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-
-
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +38,13 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    // private void Update() {
+    //     if (animator.GetBool("IsAlive") == false)
+    //     {
+    //         GetUp();
+    //     }
+    // }
 
     private void FixedUpdate()
     {
@@ -99,14 +102,12 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-
     }
 
     //Inputsystem Function
     void OnMelee_Attack()
     {
         animator.SetTrigger("Sword_Attack");
-
     }
 
     //Sword attack movement locks
@@ -132,4 +133,15 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement(){
         canMove = true;
     }
+
+    public float getUpTime = 5;
+    // void GetUp()
+    // {
+    //     getUpTime -= Time.deltaTime;
+    //     if (getUpTime <= 0 )
+    //     {
+    //         animator.SetTrigger("GetUp");
+    //         animator.SetBool("IsAlive", true);
+    //     }
+    // }
 }
