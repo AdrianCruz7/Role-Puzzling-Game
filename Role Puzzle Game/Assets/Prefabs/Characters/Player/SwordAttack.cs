@@ -38,7 +38,7 @@ public class SwordAttack : MonoBehaviour
         if (damagableObject != null)
         {
             //calculates direction between player and damagable
-            Vector3 parentPosition = transform.parent.position;
+            Vector3 parentPosition = transform.parent.localPosition;
         
             Vector2 direction = (other.gameObject.transform.position - parentPosition).normalized;
             Vector2 knockback = direction * knockbackForce;

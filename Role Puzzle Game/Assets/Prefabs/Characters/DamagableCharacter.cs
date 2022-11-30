@@ -16,7 +16,8 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
 
     public float invinciblityTime = 0.5f;
     private float invincibleTimeElapsed = 0f;
-    public float _health = 5;
+    public float _health;
+    float temphp;
 
     public float Health {
         set {
@@ -75,11 +76,39 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
         animator.SetBool("IsAlive", IsAlive);
         rb = GetComponent<Rigidbody2D>();
         physicsCollider = GetComponent<Collider2D>();
+
+        temphp = _health;
+        tempGet = getUpTime;
+    }
+
+    private void Update() {
+        if (animator.GetBool("IsAlive") == false)
+        {
+            Debug.Log("Reviving");
+            GetUp();
+        }
     }
 
     public void Defeated()
     {
         animator.SetBool("IsAlive", false);
+    }
+
+    public float getUpTime = 10;
+    float tempGet;
+    void GetUp()
+    {
+        getUpTime -= Time.deltaTime;
+        if (getUpTime <= 0 )
+        {
+            animator.SetTrigger("GetUp");
+            animator.SetBool("IsAlive", true);
+            Health = temphp;
+            getUpTime = tempGet;
+            Debug.Log(temphp);
+
+            Targetable = true;
+        }
     }
 
     public void OnHit(float damage, Vector2 knockback)
@@ -105,6 +134,16 @@ public class DamagableCharacter : MonoBehaviour, IDamagable
                 Invincible = true;
             }
         }
+    }
+
+    public void MakeInvincible()
+    {
+        Invincible = true;
+    }
+    
+    public void UnmakeInvincible()
+    {
+        Invincible = false;
     }
 
     public void onObjectDestoyed()

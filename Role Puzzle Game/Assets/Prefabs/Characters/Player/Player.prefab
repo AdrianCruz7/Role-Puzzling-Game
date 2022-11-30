@@ -293,6 +293,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 7713330401320587057}
+  getUpTime: 5
 --- !u!114 &8573756733120439800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,4 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 94451364249099540, guid: b2425f7cd1e213b4f9668d6aa1353725, type: 3}
   canTurnInvincible: 1
-  invinciblityTime: 0.5
+  _targetable: 1
+  _invincible: 0
+  invinciblityTime: 1
+  _health: 5
+  getUpTime: 5

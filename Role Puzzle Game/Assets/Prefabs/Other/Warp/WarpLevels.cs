@@ -17,7 +17,7 @@ public class WarpLevels : MonoBehaviour
         // Tags work too. Maybe some players have different script components?
         if(other.tag == "Player") 
         {
-            // Player entered, so move level
+            // Player entered, move level
             print("Switching Scene to " + sceneBuildIndex);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
