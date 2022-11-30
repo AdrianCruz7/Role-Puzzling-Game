@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
 
-
     
 
     // Start is called before the first frame update
@@ -131,5 +130,11 @@ public class PlayerController : MonoBehaviour
 
     public void UnlockMovement(){
         canMove = true;
+    }
+    void OnInventory()
+    {
+        Debug.Log("E clicked");
+        InventoryManager.Instance.changeInventoryState();
+        
     }
 }

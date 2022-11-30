@@ -9,7 +9,6 @@ public class SwordAttack : MonoBehaviour
     public Collider2D swordCollider;
 
     Vector2 rightAttackOffset;
-    InventoryManager inv;
 
 
    // Start is called before the first frame update

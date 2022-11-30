@@ -33,12 +33,17 @@ public class InventoryManager : MonoBehaviour
     public void ListItems()
     {
         Debug.Log("Peanuts");
+
+        foreach(Transform item in ItemContent)
+        {
+            Destroy(item.gameObject);
+        }
         foreach(var item in Items)
         {
             
             GameObject obj = Instantiate(InventoryItem,ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            var itemName = obj.transform.Find("Item/ItemName").GetComponent<Text>();
+            var itemIcon = obj.transform.Find("Item/ItemIcon").GetComponent<Image>();
 
 
             itemName.text = item.itemName;
@@ -47,18 +52,23 @@ public class InventoryManager : MonoBehaviour
             
         }
     }
+    
+
     public void changeInventoryState()
     {
-        Debug.Log("Fuck");
+        
+        Debug.Log("Entered");
         if(animator.GetBool("IsInventoryOpen") == true)
         {
             animator.SetBool("IsInventoryOpen", false);
+            Debug.Log("If");
         }else
         {
+            Debug.Log("Else");
             animator.SetBool("IsInventoryOpen", true);
+             ListItems();
         }
+       
     }
-
-
 
 }
