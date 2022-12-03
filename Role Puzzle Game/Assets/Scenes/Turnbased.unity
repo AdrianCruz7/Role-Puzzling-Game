@@ -441,8 +441,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714929643}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1714929645}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
         m_MethodName: OnHealButton
         m_Mode: 1
         m_Arguments:
@@ -1641,7 +1641,7 @@ GameObject:
   - component: {fileID: 1290496119}
   - component: {fileID: 1290496121}
   - component: {fileID: 1290496120}
-  - component: {fileID: 1290496122}
+  - component: {fileID: 1290496123}
   m_Layer: 5
   m_Name: EnemyBattleHud
   m_TagString: Untagged
@@ -1710,7 +1710,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290496118}
   m_CullTransparentMesh: 0
---- !u!114 &1290496122
+--- !u!114 &1290496123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1719,9 +1719,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1290496118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36616fc90507ed419289ae37266212f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1de5aa9c81c844b43ba7222e1b75f5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 2101677546}
+  levelText: {fileID: 102492891}
+  hpSlider: {fileID: 1589395327}
 --- !u!1 &1466009196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466009196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.97, y: 1.8, z: 0}
+  m_LocalPosition: {x: 3.97, y: 1.67, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2061,8 +2064,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714929643}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1714929645}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
         m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
@@ -2240,7 +2243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1714929644}
-  - component: {fileID: 1714929643}
+  - component: {fileID: 1714929645}
   m_Layer: 0
   m_Name: Battle System
   m_TagString: Untagged
@@ -2248,18 +2251,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1714929643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714929642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace5d3b76e8bbd94d8faa070310b062d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,6 +2266,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714929645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714929642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fd3aac5e777694f828cc930991e238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 8961289210532667090, guid: ca9e7a0a1ce9fbb41aa12ee3c750cd68, type: 3}
+  enemyPrefab: {fileID: 3459881575078518773, guid: 0301e9b50bd4db74ca3ac7730442ce88, type: 3}
+  playerBattleStation: {fileID: 776899475}
+  enemyBattleStation: {fileID: 1466009198}
+  dialogueText: {fileID: 1584004651}
+  playerHUD: {fileID: 1727677078}
+  enemyHUD: {fileID: 1290496123}
+  state: 0
+  warp: {fileID: 0}
+  sceneBuildIndex: 1
 --- !u!1 &1715227581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,7 +2336,7 @@ GameObject:
   - component: {fileID: 1727677074}
   - component: {fileID: 1727677077}
   - component: {fileID: 1727677076}
-  - component: {fileID: 1727677075}
+  - component: {fileID: 1727677078}
   m_Layer: 5
   m_Name: PlayerBattleHud
   m_TagString: Untagged
@@ -2354,18 +2367,6 @@ RectTransform:
   m_AnchoredPosition: {x: 49, y: -40}
   m_SizeDelta: {x: 354.75, y: 115.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1727677075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727677073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36616fc90507ed419289ae37266212f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1727677076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,6 +2405,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727677073}
   m_CullTransparentMesh: 0
+--- !u!114 &1727677078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727677073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5aa9c81c844b43ba7222e1b75f5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1166149988}
+  levelText: {fileID: 279674488}
+  hpSlider: {fileID: 1142284058}
 --- !u!1 &1742881443
 GameObject:
   m_ObjectHideFlags: 0
