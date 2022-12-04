@@ -332,7 +332,7 @@ MonoBehaviour:
   _invincible: 0
   invinciblityTime: 0.5
   _health: 100
-  getUpTime: 5
+  getUpTime: 10
 --- !u!1 &8143480432628973703
 GameObject:
   m_ObjectHideFlags: 0
