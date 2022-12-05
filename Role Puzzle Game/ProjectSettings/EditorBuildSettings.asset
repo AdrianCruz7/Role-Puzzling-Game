@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Turnbased.unity
     guid: 95f3421f3a53dab4e90c77e6ab236f53
+  - enabled: 1
+    path: Assets/Scenes/Upstairs.unity
+    guid: a24370c674ee12b4b87dd53ee90c9b79
+  - enabled: 1
+    path: Assets/Scenes/UpsToInside.unity
+    guid: cf76b49d89060794ea6b6d1b11e96e4a
   m_configObjects: {}
