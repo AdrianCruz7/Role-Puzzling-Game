@@ -12,14 +12,15 @@ public class WarpLevels : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         print("Trigger Entered");
-        
+
         // Could use other.GetComponent<Player>() to see if the game object has a Player component
         // Tags work too. Maybe some players have different script components?
-        if(other.tag == "Player") 
+        if (other.tag == "Player") 
         {
             // Player entered, move level
             print("Switching Scene to " + sceneBuildIndex);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            AudioManager.instance.WalkStop();
         }
     }
 }

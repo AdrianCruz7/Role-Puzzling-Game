@@ -34,4 +34,9 @@ public class AudioManager : MonoBehaviour
             walkSource.Stop();
         }
     }
+
+    public void WalkStop()
+    {
+        walkSource.Stop();
+    }
 }
