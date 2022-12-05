@@ -5,11 +5,14 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public Item item;
+    PlayerController player;
 
     public void Pickup()
     {
         InventoryManager.Instance.Add(item);
         Destroy(gameObject);
+        InventoryManager.Instance.changeInventoryState();
+        InventoryManager.Instance.itemNotifTime = 3;
     }
 
     void OnCollisionEnter2D(Collision2D col)
