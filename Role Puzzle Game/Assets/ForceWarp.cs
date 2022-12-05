@@ -16,7 +16,7 @@ public class ForceWarp : MonoBehaviour
     }
 
     private void Update() {
-        if (timer <= 0 )
+        if (timer <= 1 )
         {
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }

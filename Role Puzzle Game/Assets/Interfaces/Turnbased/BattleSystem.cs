@@ -76,6 +76,7 @@ public class BattleSystem : MonoBehaviour
 		dialogueText.text = enemyUnit.unitName + " attacks!";
 
 		yield return new WaitForSeconds(1f);
+		dialogueText.text = "You took " + enemyUnit.damage + " damage...";
 
 		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
@@ -90,13 +91,14 @@ public class BattleSystem : MonoBehaviour
 		} else
 		{
 			state = BattleState.PLAYERTURN;
-			dialogueText.text = "You took " + enemyUnit.damage + " damage...";
 			PlayerTurn();
 		}
 
 	}
 
 	public int sceneBuildIndex = 1;
+	
+	public int sceneBuildIndex2 = 1;
 
 	void EndBattle()
 	{
@@ -107,7 +109,6 @@ public class BattleSystem : MonoBehaviour
 		{
 			dialogueText.text = "You were defeated.";
 		}
-		SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
 	}
 
 	void PlayerTurn()
@@ -145,4 +146,19 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
+	float timer = 3;
+	private void Update() {
+		if(state == BattleState.WON || state == BattleState.LOST)
+		{
+			timer = timer - Time.deltaTime;
+		}
+		if (timer <= 0 && state == BattleState.WON)
+		{
+			SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+		}
+		if (timer <= 0 && state == BattleState.LOST)
+		{
+			SceneManager.LoadScene(sceneBuildIndex2, LoadSceneMode.Single);
+		}
+	}
 }

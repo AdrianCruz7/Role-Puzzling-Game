@@ -1038,6 +1038,7 @@ MonoBehaviour:
   ItemContent: {fileID: 550633692}
   InventoryItem: {fileID: 380165312}
   animator: {fileID: 550633696}
+  itemNotifTime: 0
 --- !u!4 &161627983
 Transform:
   m_ObjectHideFlags: 0
@@ -1469,7 +1470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.56, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7833,7 +7834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977894456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.56, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23494,16 +23495,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1987322482}
     - target: {fileID: 7294213275512209101, guid: 847fc13caa0ecbf4bbf103dc14bc2797, type: 3}
+      propertyPath: dialogue.name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294213275512209101, guid: 847fc13caa0ecbf4bbf103dc14bc2797, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294213275512209101, guid: 847fc13caa0ecbf4bbf103dc14bc2797, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Hello! Again!
+      value: Can't Wait to begin my journey!
       objectReference: {fileID: 0}
     - target: {fileID: 7294213275512209101, guid: 847fc13caa0ecbf4bbf103dc14bc2797, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: To access your inventory press E
+      value: I better practice with my friend "Dude Monster"
       objectReference: {fileID: 0}
     - target: {fileID: 7294213275512209101, guid: 847fc13caa0ecbf4bbf103dc14bc2797, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: 'To '
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 847fc13caa0ecbf4bbf103dc14bc2797, type: 3}
@@ -23530,9 +23539,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4759726484719926336, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.87409174
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759726484719926336, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08073908
+      objectReference: {fileID: 0}
     - target: {fileID: 4759726484719926337, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
       propertyPath: m_Name
       value: Warp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759726484719926338, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4759726484719926339, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
       propertyPath: m_RootOrder
@@ -23544,7 +23565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4759726484719926339, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.928
       objectReference: {fileID: 0}
     - target: {fileID: 4759726484719926339, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23744,7 +23765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015385645233705538, guid: 27523666f772d784790d1036057ca372, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 6015385645233705538, guid: 27523666f772d784790d1036057ca372, type: 3}
       propertyPath: m_LocalPosition.z
