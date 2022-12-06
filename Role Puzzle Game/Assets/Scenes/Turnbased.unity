@@ -2286,8 +2286,8 @@ MonoBehaviour:
   playerHUD: {fileID: 1727677078}
   enemyHUD: {fileID: 1290496123}
   state: 0
-  sceneBuildIndex: 8
-  sceneBuildIndex2: 7
+  sceneBuildIndex: 9
+  sceneBuildIndex2: 8
 --- !u!1 &1715227581
 GameObject:
   m_ObjectHideFlags: 0

@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d9df195ec5a114f86484f2b8d62722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  knockbackForce: 40
+  damage: 2
+  knockbackForce: 275
   meleeCollider: {fileID: 7735356226610370843}
 --- !u!1 &5335631651627874369
 GameObject:
@@ -262,7 +262,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009734601, y: -0.044603705}
+  m_Offset: {x: -0.009734601, y: -0.11203647}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -273,7 +273,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31563348, y: 0.5107925}
+  m_Size: {x: 0.31563348, y: 0.37592697}
   m_EdgeRadius: 0
 --- !u!95 &684938098075977172
 Animator:
@@ -307,9 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cb6f2654b2eb04ca3fee568b3f30f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  knockbackForce: 50
-  moveSpeed: 250
+  damage: 2
+  knockbackForce: 150
+  moveSpeed: 275
   canMove: 1
   enemyRange: {fileID: 2197127785350392388}
   enemyMelee: {fileID: 2757765387167006648}

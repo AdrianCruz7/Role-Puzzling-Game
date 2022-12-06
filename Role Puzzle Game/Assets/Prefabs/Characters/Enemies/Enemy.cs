@@ -55,21 +55,21 @@ public class Enemy : MonoBehaviour
     }
     
     //damage on collision
-    // void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     Collider2D collider = col.collider;
-    //     IDamagable damagable = col.collider.GetComponent<IDamagable>();
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Collider2D collider = col.collider;
+        IDamagable damagable = col.collider.GetComponent<IDamagable>();
 
-    //     if (damagable != null)
-    //     {
-    //         Vector2 direction = (col.gameObject.transform.position - transform.position).normalized;
-    //         Vector2 knockback = direction * knockbackForce;
+        if (damagable != null)
+        {
+            Vector2 direction = (col.gameObject.transform.position - transform.position).normalized;
+            Vector2 knockback = direction * knockbackForce;
 
-    //         //damage enemy with knockback force applied
-    //         damagable.OnHit(damage, knockback);
-    //         //if (transform.localPosition <= damagable || transform.localPosition >= damagable)
-    //     }
-    // }
+            //damage enemy with knockback force applied
+            damagable.OnHit(damage, knockback);
+            //if (transform.localPosition <= damagable || transform.localPosition >= damagable)
+        }
+    }
 
     //set in animator
     public void MeleeAttack(){

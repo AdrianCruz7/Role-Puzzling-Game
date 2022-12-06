@@ -79,15 +79,15 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(InventoryManager.Instance.itemNotifTime > 0)
-        {
-            Debug.Log("Item Notif Open");
-            InventoryManager.Instance.itemNotifTime -= Time.deltaTime;
-        }
-        else if(InventoryManager.Instance.itemNotifTime < 0){
-            InventoryManager.Instance.itemNotifTime = 0;
-            InventoryManager.Instance.changeInventoryState();
-        }
+        // if(InventoryManager.Instance.itemNotifTime > 0)
+        // {
+        //     Debug.Log("Item Notif Open");
+        //     InventoryManager.Instance.itemNotifTime -= Time.deltaTime;
+        // }
+        // else if(InventoryManager.Instance.itemNotifTime < 0){
+        //     InventoryManager.Instance.itemNotifTime = 0;
+        //     InventoryManager.Instance.changeInventoryState();
+        // }
     }
 
     private bool tryMove(Vector2 direction)
