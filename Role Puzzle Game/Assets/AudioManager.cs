@@ -10,11 +10,10 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        //used to prevent the sounds from repeating from the start when moving through rooms
+       
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         } else
         {
             Destroy(gameObject);
