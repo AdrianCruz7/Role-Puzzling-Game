@@ -1552,6 +1552,7 @@ MonoBehaviour:
   ItemContent: {fileID: 550633692}
   InventoryItem: {fileID: 380165312}
   animator: {fileID: 550633696}
+  itemNotifTime: 0
 --- !u!4 &161627983
 Transform:
   m_ObjectHideFlags: 0
@@ -22245,6 +22246,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4759726484719926336, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.842425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759726484719926336, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.06291239
+      objectReference: {fileID: 0}
     - target: {fileID: 4759726484719926337, guid: d7bfc04404708b141a8e48be6cceb63d, type: 3}
       propertyPath: m_Name
       value: Warp
