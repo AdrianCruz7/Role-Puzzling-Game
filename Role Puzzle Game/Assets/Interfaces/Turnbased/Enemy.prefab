@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e184ab1b98bc568428ace949b7fb1484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Monster Dude
+  unitName: Dude
   unitLevel: 2
   damage: 3
   maxHP: 20
