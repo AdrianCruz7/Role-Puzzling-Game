@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscene.unity
     guid: ab1db09718380724f97c6de78f0c1e2c
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: d32d22ff14b3b234f8693eb06e0ca6a1
+  - enabled: 1
+    path: Assets/Scenes/Outside Lose.unity
+    guid: 26122617e7cccaf498f5e34015635e77
+  - enabled: 1
+    path: Assets/Scenes/Outside Win.unity
+    guid: 8f11d8275fd50074f9c234ae23319489
   m_configObjects: {}

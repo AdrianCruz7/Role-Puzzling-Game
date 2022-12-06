@@ -237,7 +237,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 12.5}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &282430016
 Animator:
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -426,6 +426,8 @@ PlayableDirector:
     value: {fileID: 2020014191}
   - key: {fileID: 1931031555977089905, guid: 1d26c533bf164df418267de0f0e6f8c7, type: 2}
     value: {fileID: 1582239612}
+  - key: {fileID: -5331010382121024879, guid: 1d26c533bf164df418267de0f0e6f8c7, type: 2}
+    value: {fileID: 282430016}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &470030182
@@ -787,7 +789,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 12.5}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &1582239609
 PlayableDirector:
@@ -853,8 +855,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -961,7 +963,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 12.5}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!320 &2020014188
 PlayableDirector:
@@ -1027,8 +1029,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1104,9 +1106,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3527912307180295877, guid: ad55f31d345106e4f873fbee26290d14, type: 3}
+      propertyPath: timer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -3527912307180295877, guid: ad55f31d345106e4f873fbee26290d14, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3527912307180295877, guid: ad55f31d345106e4f873fbee26290d14, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6137535107551503277, guid: ad55f31d345106e4f873fbee26290d14, type: 3}
       propertyPath: m_Name
       value: ForceWarp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137535107551503278, guid: ad55f31d345106e4f873fbee26290d14, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6137535107551503279, guid: ad55f31d345106e4f873fbee26290d14, type: 3}
       propertyPath: m_RootOrder
