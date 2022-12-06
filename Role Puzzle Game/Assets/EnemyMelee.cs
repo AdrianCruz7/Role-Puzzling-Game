@@ -14,20 +14,23 @@ public class EnemyMelee : MonoBehaviour
    // Start is called before the first frame update
     private void Start()
     {
-        rightAttackOffset = transform.position;
+        //rightAttackOffset = transform.parent.position;
     }
 
     public void AttackRight(){
         Debug.Log("Right");
         meleeCollider.enabled = true;
-        transform.position = rightAttackOffset;
+        //transform.position = rightAttackOffset;
+        
+        transform.position = new Vector2(transform.parent.position.x * -1, transform.parent.position.y);
+
         Debug.Log(transform.localPosition.ToString());
         Debug.Log(transform.position.ToString());
     }
 
     public void AttackLeft(){
         meleeCollider.enabled = true;
-        transform.position = new Vector2(rightAttackOffset.x * -1, rightAttackOffset.y);
+        transform.position = new Vector2(transform.parent.position.x, transform.parent.position.y);
         Debug.Log(transform.localPosition.ToString());
         Debug.Log(transform.position.ToString());
     }
@@ -41,7 +44,7 @@ public class EnemyMelee : MonoBehaviour
         if (damagableObject != null)
         {
             //calculates direction between enemy and damagable
-            Vector3 parentPosition = transform.parent.position;
+            Vector3 parentPosition = transform.position;
         
             Vector2 direction = (other.gameObject.transform.position - parentPosition).normalized;
             Vector2 knockback = direction * knockbackForce;
