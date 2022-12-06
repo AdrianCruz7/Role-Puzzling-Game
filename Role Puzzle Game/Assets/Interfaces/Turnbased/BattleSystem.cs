@@ -77,6 +77,7 @@ public class BattleSystem : MonoBehaviour
 
 		yield return new WaitForSeconds(1f);
 		dialogueText.text = "You took " + enemyUnit.damage + " damage...";
+		yield return new WaitForSeconds(1f);
 
 		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
