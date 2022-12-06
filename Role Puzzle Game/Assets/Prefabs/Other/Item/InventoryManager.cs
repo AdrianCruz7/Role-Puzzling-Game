@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryItem;
 
     public Animator animator;
-
+    public float itemNotifTime = 0;
 
     private void Awake()
     {
@@ -30,45 +30,44 @@ public class InventoryManager : MonoBehaviour
     {
         Items.Remove(item);
     }
-    public void ListItems()
-    {
-        Debug.Log("Peanuts");
 
-        foreach(Transform item in ItemContent)
-        {
-            Destroy(item.gameObject);
-        }
-        foreach(var item in Items)
-        {
+
+    // public void ListItems()
+    // {
+    //     Debug.Log("Peanuts");
+
+    //     foreach(Transform item in ItemContent)
+    //     {
+    //         Destroy(item.gameObject);
+    //     }
+    //     foreach(var item in Items)
+    //     {
             
-            GameObject obj = Instantiate(InventoryItem,ItemContent);
-            var itemName = obj.transform.Find("Item/ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("Item/ItemIcon").GetComponent<Image>();
+    //         GameObject obj = Instantiate(InventoryItem,ItemContent);
+    //         var itemName = obj.transform.Find("Item/ItemName").GetComponent<Text>();
+    //         var itemIcon = obj.transform.Find("Item/ItemIcon").GetComponent<Image>();
 
 
-            itemName.text = item.itemName;
-            itemIcon.sprite = item.icon;
+    //         itemName.text = item.itemName;
+    //         itemIcon.sprite = item.icon;
 
             
-        }
-    }
+    //     }
+    // }
     
 
     public void changeInventoryState()
     {
         
         Debug.Log("Entered");
-        if(animator.GetBool("IsInventoryOpen") == true)
+        if(animator.GetBool("IsInventoryOpen") == false)
         {
-            animator.SetBool("IsInventoryOpen", false);
+            animator.SetBool("IsInventoryOpen", true);
             Debug.Log("If");
         }else
         {
-            Debug.Log("Else");
-            animator.SetBool("IsInventoryOpen", true);
-             ListItems();
+            animator.SetBool("IsInventoryOpen", false);
         }
-       
     }
 
 }

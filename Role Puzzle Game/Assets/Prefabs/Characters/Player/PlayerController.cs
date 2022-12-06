@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 3f;
     public float idleFriction = 0.9f;
 
+
+
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -74,6 +76,17 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
 
             IsMoving = false;
+        }
+
+
+        if(InventoryManager.Instance.itemNotifTime > 0)
+        {
+            Debug.Log("Item Notif Open");
+            InventoryManager.Instance.itemNotifTime -= Time.deltaTime;
+        }
+        else if(InventoryManager.Instance.itemNotifTime < 0){
+            InventoryManager.Instance.itemNotifTime = 0;
+            InventoryManager.Instance.changeInventoryState();
         }
     }
 
@@ -137,7 +150,6 @@ public class PlayerController : MonoBehaviour
     }
     void OnInventory()
     {
-        Debug.Log("E clicked");
         InventoryManager.Instance.changeInventoryState();
         
     }
